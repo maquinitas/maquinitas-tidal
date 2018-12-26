@@ -1,0 +1,6 @@
+-- d1 $ n "0 0 0" # s "midi"
+-- d1 silence
+-- d1 $ note "[0 4 7]*7" # s "midi" # midichan 0
+--
+-- d2 $ ccv 127 # ccn 23 # s "midi"
+-- d2 $ ccv "0 64 127" # ccn vcfCutoff # s "midi"
