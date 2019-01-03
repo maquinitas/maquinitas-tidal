@@ -16,7 +16,16 @@ cabal install
 
 ## Deploying
 
+```bash
+cabal sdist
+```
+
 ## Installing
+
+```bash
+cabal update
+cabal install maquinitas-tidal
+```
 
 ## Testing
 
