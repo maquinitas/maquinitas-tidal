@@ -56,4 +56,5 @@ let d16 = p "16"
 -- maquinitas-tidal
 putStrLn "maquinitas-tidal loading..."
 import RolandTR08
+import RolandSH01A
 putStrLn "maquinitas-tidal loaded!"
