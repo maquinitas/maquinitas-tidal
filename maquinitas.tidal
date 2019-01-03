@@ -1,3 +1,23 @@
+-- maquinitas-tidal
+
+
+
+-- boot supercollider with file maquinitas.scd
+
+let bdTune = 1.0
+
+-- boot tidalcycles with file maquinitas-boot.hs
+
+
+-- test tidalcycles
+d1 $ sound "[bd bd bd bd]" # gain bdTune
+d1 silence
+
+-- import auxiliary files
+
+-- roland tr-8
+-- roland-tr08.tidal
+
 -- d1 $ n "0 0 0" # s "midi"
 -- d1 silence
 -- d1 $ note "[0 4 7]*7" # s "midi" # midichan 0

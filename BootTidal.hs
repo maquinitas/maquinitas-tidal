@@ -52,3 +52,8 @@ let d15 = p "15"
 let d16 = p "16"
 
 :set prompt "tidal> "
+
+-- maquinitas-tidal
+putStrLn "maquinitas-tidal loading..."
+import RolandTR08
+putStrLn "maquinitas-tidal loaded!"
