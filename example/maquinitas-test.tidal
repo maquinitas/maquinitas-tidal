@@ -2,20 +2,16 @@
 
 -- install maquinitas-tidal
 
--- boot supercollider with file maquinitas.scd
-
--- boot tidalcycles with file maquinitas-boot.hs
+-- boot supercollider and tidalcycles
 
 -- test tidalcycles
--- d1 $ sound "[bd bd bd bd]" # gain bdTune
 d1 $ sound "[bd bd bd bd]"
 d1 silence
 
--- import auxiliary files
+-- import maquinitas-tidal modules
+import qualified RolandSH01A
+import qualified RolandTR08
 
--- d1 $ n "0 0 0" # s "midi"
--- d1 silence
--- d1 $ note "[0 4 7]*7" # s "midi" # midichan 0
---
--- d2 $ ccv 127 # ccn 23 # s "midi"
--- d2 $ ccv "0 64 127" # ccn vcfCutoff # s "midi"
+-- print value to console
+show RolandSH01A.modulation
+show RolandTR08.bdTune
