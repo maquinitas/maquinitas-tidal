@@ -1,5 +1,6 @@
 -- maquinitas-tidal
--- roland tr-08
+-- Roland TR-08 parameters
+
 module RolandTR08 where
 
   bdTune = 20

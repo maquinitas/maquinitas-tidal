@@ -1,5 +1,5 @@
--- maquinitas x tidal
--- parameters for roland sh-01a
+-- maquinitas-tidal
+-- Roland SH-01A parameters
 
 module RolandSH01A where
 
