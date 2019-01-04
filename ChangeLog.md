@@ -1,4 +1,4 @@
-# Revision history for maquinitas-tidal
+# Revision history for maquinitas
 
 ## 0.1.0.0 -- YYYY-mm-dd
 

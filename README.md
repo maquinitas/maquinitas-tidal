@@ -24,7 +24,7 @@ cabal sdist
 
 ```bash
 cabal update
-cabal install maquinitas-tidal
+cabal install maquinitas
 ```
 
 ## Testing
