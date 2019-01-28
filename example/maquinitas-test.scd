@@ -12,8 +12,8 @@ MIDIClient.init;
 
 // connect your MIDI device
 // replace xx and yy with corresponding MIDI ports
-var nameMIDIDestLeft = "Boutique";
-var nameMIDIDestRight = "Boutique";
+var nameMIDIDestLeft = "xx";
+var nameMIDIDestRight = "yy";
 // store result in variable called zz
 ~zz = MIDIOut.newByName(nameMIDIDestLeft, nameMIDIDestRight);
 
