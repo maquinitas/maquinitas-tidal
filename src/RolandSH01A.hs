@@ -2,7 +2,7 @@
 -- Roland SH-01A parameters
 
 module RolandSH01A where
-
+  -- control change
   modulation = 1
   lfoRate = 3
   portamentoTime = 5

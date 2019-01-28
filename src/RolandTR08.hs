@@ -2,7 +2,7 @@
 -- Roland TR-08 parameters
 
 module RolandTR08 where
-
+  -- control change
   bdTune = 20
   bdTone = 21
   bdComp = 22
