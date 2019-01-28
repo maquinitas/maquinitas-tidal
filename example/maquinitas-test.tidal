@@ -1,6 +1,6 @@
--- maquinitas-tidal
+-- maquinitas
 
--- install maquinitas-tidal
+-- install maquinitas
 
 -- boot supercollider and tidalcycles
 
@@ -9,9 +9,10 @@ d1 $ sound "[bd bd bd bd]"
 d1 silence
 
 -- import maquinitas-tidal modules
+import qualified MFBTanzbar
 import qualified RolandSH01A
 import qualified RolandTR08
 
 -- print value to console
-show RolandSH01A.modulation
+show MFBTanzbar.sd
 show RolandTR08.bdTune
