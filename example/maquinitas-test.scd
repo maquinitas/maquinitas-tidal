@@ -1,7 +1,7 @@
 // starting tidalcycles
 // install SuperDirt
 include("SuperDirt");
-//start SuperDirt
+// start SuperDirt
 SuperDirt.start;
 
 // based on code and instructions at
@@ -11,11 +11,14 @@ SuperDirt.start;
 MIDIClient.init;
 
 // connect your MIDI device
-var nameMIDIDestLeft = "Boutique SH-01A";
-var nameMIDIDestRight = "Boutique SH-01A";
-~midiOut = MIDIOut.newByName(nameMIDIDestinationLeft, rolandSH01A);
+// replace xx and yy with corresponding MIDI ports
+var nameMIDIDestLeft = "Boutique";
+var nameMIDIDestRight = "Boutique";
+// store result in variable called zz
+~zz = MIDIOut.newByName(nameMIDIDestLeft, nameMIDIDestRight);
 
-~dirt.soundLibrary.addMIDI(\midi, ~midiOut);
+// route zz to a name in tidal
+~dirt.soundLibrary.addMIDI(\tidalName, ~zz);
 
-// define latency
-~midiOut.latency = 0.45;
+// optional, define latency of zz
+// ~zz.latency = 0.45;

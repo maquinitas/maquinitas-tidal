@@ -1,6 +1,15 @@
 -- maquinitas
 
--- install maquinitas
+-- first install maquinitas
+
+-- import maquinitas modules
+import qualified MFBTanzbar
+import qualified RolandSH01A
+import qualified RolandTR08
+
+-- print values to console
+show MFBTanzbar.sd
+show RolandTR08.bdTune
 
 -- boot supercollider and tidalcycles
 
@@ -8,11 +17,6 @@
 d1 $ sound "[bd bd bd bd]"
 d1 silence
 
--- import maquinitas-tidal modules
-import qualified MFBTanzbar
-import qualified RolandSH01A
-import qualified RolandTR08
+-- test maquinitas
 
--- print value to console
-show MFBTanzbar.sd
-show RolandTR08.bdTune
+d1 $ n "[0 2 4 7]" # s "tidalName"
