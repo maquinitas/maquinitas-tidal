@@ -17,7 +17,8 @@ extra-source-files:  ChangeLog.md, README.md
 cabal-version:       >=1.10
 
 library
-  exposed-modules:   RolandTR08
+  exposed-modules:   MFBTanzbar
+                     RolandTR08
                      RolandSH01A
   -- other-modules:
   -- other-extensions:
