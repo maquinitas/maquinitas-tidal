@@ -8,18 +8,24 @@ maquinitas-tidal is a flavor of the maquinitas library, intended to be used in c
 
 maquinitas-tidal is built using the programming language Haskell, and with the cabal package manager.
 
+## Releases
+
+All relases of maquinitas-tidal are availabe on [GitHub](https://github.com/maquinitas/maquinitas-tidal/releases/) and [Hackage](https://hackage.haskell.org/package/maquinitas-tidal).
+
+* v0.1.0 (2019-12-17): first release, support for 4 instruments.
+
+## Next features
+
+* Add support for more instruments
+* Add more examples
+* Add conventions for drum voice names
+* Add conventions for parameter names
+
 ## Developing
 
 ```bash
 cabal configure
 cabal build
-cabal install
-```
-
-## Deploying
-
-```bash
-cabal sdist
 ```
 
 ## Installing
@@ -28,12 +34,6 @@ cabal sdist
 cabal update
 cabal install maquinitas
 ```
-
-## Testing
-
-## Releases
-
-None so far
 
 ## License
 
