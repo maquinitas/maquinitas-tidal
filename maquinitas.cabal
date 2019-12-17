@@ -20,6 +20,8 @@ library
   exposed-modules:   MFBTanzbar
                      RolandTR08
                      RolandSH01A
+                     korg-mr-16
+                     
   -- other-modules:
   -- other-extensions:
   build-depends:       base >=4.11 && <4.12
