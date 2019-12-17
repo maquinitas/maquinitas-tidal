@@ -1,5 +1,5 @@
 # Revision history for maquinitas
 
-## 0.1.0.0 -- YYYY-mm-dd
+## 0.1.0.0 -- 2019-12-17
 
-* First version. Released on an unsuspecting world.
+* First version. Testing build of package, add first four instruments.
