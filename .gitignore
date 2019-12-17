@@ -2,4 +2,4 @@
 
 dist/
 
-.local~
+*.local~
