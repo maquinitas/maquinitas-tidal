@@ -2,6 +2,9 @@
 
 -- first install maquinitas
 
+-- import maquinitas
+:set -package maquinitas-tidal
+
 -- import maquinitas modules
 import qualified MFBTanzbar
 import qualified RolandSH01A
