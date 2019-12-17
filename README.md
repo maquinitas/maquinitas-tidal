@@ -14,7 +14,7 @@ All relases of maquinitas-tidal are availabe on [GitHub](https://github.com/maqu
 
 * v0.1.0 (2019-12-17): first release, support for 4 instruments.
 
-## Next features
+## Features to be added
 
 * Add support for more instruments
 * Add more examples
