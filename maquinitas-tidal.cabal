@@ -17,8 +17,7 @@ category:            Sound
 build-type:          Simple
 extra-source-files:  ChangeLog.md, README.md
 
-executable maquinitas-tidal
-  main-is:             Main.hs
+library
   -- other-modules:
   -- other-extensions:
   build-depends:       base >=4.13 && <4.14
@@ -27,7 +26,7 @@ executable maquinitas-tidal
   exposed-modules:     MFBTanzbar
                        RolandTR08
                        RolandSH01A
-                       korg-mr-16
+                       KORGMR16
 
 source-repository head
   type:                git
