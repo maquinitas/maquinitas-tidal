@@ -2,4 +2,6 @@
 
 dist/
 
+dist-newstyle/
+
 *.local~
