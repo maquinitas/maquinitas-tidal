@@ -1,7 +1,7 @@
 -- maquinitas-tidal
 -- parameters for korg mr-16
 
-module korg-mr-16 where
+module KORGMR16 where
   -- notes
   bd = 35
   rs = 37
