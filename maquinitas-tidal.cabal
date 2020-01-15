@@ -1,5 +1,5 @@
 name:                maquinitas-tidal
-version:             0.1.0
+version:             0.2.0
 synopsis:            library for MIDI control of hardware
 description:         maquinitas is a library for MIDI control of hardware
 homepage:            https://github.com/maquinitas/maquinitas-tidal
@@ -20,7 +20,7 @@ library
                        KORGMR16
   -- other-modules:
   -- other-extensions:
-  build-depends:       base >=4.13 && <4.14
+  build-depends:       base >=4.8
   hs-source-dirs:      src
   default-language:    Haskell2010
   
