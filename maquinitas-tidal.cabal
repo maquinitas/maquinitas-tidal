@@ -14,10 +14,12 @@ extra-source-files:  ChangeLog.md, README.md
 cabal-version:       >=1.10
 
 library
-  exposed-modules:     MFBTanzbar
-                       RolandTR08
-                       RolandSH01A
-                       KORGMR16
+  exposed-modules:    KORGMR16 
+                      MFBTanzbar
+                      OtoBam
+                      RolandTR08
+                      RolandSH01A
+                      
   -- other-modules:
   -- other-extensions:
   build-depends:       base >=4.8
