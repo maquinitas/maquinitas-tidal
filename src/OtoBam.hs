@@ -3,15 +3,15 @@
 
 module OtoBam where
   -- cc
-  size = 12
-  preDelay = 13
-  mix = 14
-  reverbTime = 15
-  damping = 16
-  active = 17
-  type = 18
-  inGain = 19
-  lowCut = 20
-  highCut = 21
-  chorus = 22
-  freeze = 23
+  ccSize = 12
+  ccPreDelay = 13
+  ccMix = 14
+  ccReverbTime = 15
+  ccDamping = 16
+  ccActive = 17
+  ccType = 18
+  ccInGain = 19
+  ccLowCut = 20
+  ccHighCut = 21
+  ccChorus = 22
+  ccFreeze = 23
