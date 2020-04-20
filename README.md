@@ -32,7 +32,7 @@ cabal build
 
 ```bash
 cabal update
-cabal install maquinitas
+cabal install maquinitas-tidal --lib
 ```
 
 ## License
