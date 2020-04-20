@@ -1,8 +1,4 @@
 // starting tidalcycles
-// install SuperDirt
-include("SuperDirt");
-// start SuperDirt
-SuperDirt.start;
 
 // based on code and instructions at
 // http://blog.tidalcycles.org/superdirt-midi/

@@ -1,16 +1,14 @@
--- maquinitas
-
--- first install maquinitas
-
 -- import maquinitas
 :set -package maquinitas-tidal
 
 -- import maquinitas modules
+import qualified Korg
 import qualified MFBTanzbar
 import qualified RolandSH01A
 import qualified RolandTR08
 
 -- print values to console
+
 show MFBTanzbar.sd
 show RolandTR08.bdTune
 
