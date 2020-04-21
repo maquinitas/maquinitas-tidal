@@ -1,11 +1,11 @@
 -- maquinitas-tidal
--- parameters for Korg instruments
+-- parameters for instruments by Korg
 
 module Korg where
 
-  volca = [beats, fm]
-
-
+  volcaBeats :: Num a => String -> a
+  volcaBeats "bd" = 36
+  volcaBeats "sn" = 38
 
   -- notes
   bd = 35
