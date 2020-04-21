@@ -13,6 +13,7 @@ maquinitas-tidal is built using the programming language Haskell, and with the c
 All relases of maquinitas-tidal are availabe on [GitHub](https://github.com/maquinitas/maquinitas-tidal/releases/) and [Hackage](https://hackage.haskell.org/package/maquinitas-tidal).
 
 * v0.1.0 (2019-12-17): first release, support for 4 instruments.
+* v0.2.x (2020): learning more Haskell, made the decision to have one module per instrument manufacturer.
 
 ## Features to be added
 
@@ -32,7 +33,7 @@ cabal build
 
 ```bash
 cabal sdist
-cabal upload path/to/maquinitas-tidal-x.x.x.tar.gz --publish
+cabal upload dist-newstyle/sdist/maquinitas-tidal-x.x.x.tar.gz --publish
 ```
 
 ## Installing

@@ -3,21 +3,6 @@
 
 -- import maquinitas modules
 import qualified Korg
-import qualified MFBTanzbar
-import qualified RolandSH01A
-import qualified RolandTR08
 
--- print values to console
-
-show MFBTanzbar.sd
-show RolandTR08.bdTune
-
--- boot supercollider and tidalcycles
-
--- test tidalcycles
-d1 $ sound "[bd bd bd bd]"
-d1 silence
-
--- test maquinitas
-
-d1 $ n "[0 2 4 7]" # s "tidalName"
+-- test installation
+d1 $ Korg.volcaBeats "bd sn" # sound "midi" # midichan "9"
