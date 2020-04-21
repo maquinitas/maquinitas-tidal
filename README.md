@@ -10,10 +10,10 @@ maquinitas-tidal is built using the programming language Haskell, and with the c
 
 ## Releases
 
-All relases of maquinitas-tidal are availabe on [GitHub](https://github.com/maquinitas/maquinitas-tidal/releases/) and [Hackage](https://hackage.haskell.org/package/maquinitas-tidal).
+All releases of maquinitas-tidal are available at [Hackage](https://hackage.haskell.org/package/maquinitas-tidal).
 
-* v0.1.0 (2019-12-17): first release, support for 4 instruments.
-* v0.2.x (2020): learning more Haskell, made the decision to have one module per instrument manufacturer.
+* v0.1.0 (2019-12): first release, support for 4 instruments.
+* v0.2.x (2020-04): made the decision to have one module per instrument manufacturer.
 
 ## Features to be added
 
