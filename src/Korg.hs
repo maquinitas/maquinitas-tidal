@@ -3,21 +3,24 @@
 
 module Korg where
 
-  volcaBeats :: Pattern String -> ControlPattern
-  volcaBeats = n . (substract 60 . drumN <$>)
+  import Sound.Tidal.Params
+  import Sound.Tidal.Pattern
 
-  drumN :: Num a => String -> a
-  drumN "bd" = 36
-  drumN "sn" = 38
-  drumN "lt" = 43
-  drumN "ht" = 50
-  drumN "ch" = 42
-  drumN "oh" = 46
-  drumN "cp" = 39
-  drumN "cl" = 75
-  drumN "ag" = 67
-  drumN "cr" = 49
-  drumN _ = 0
+  volcaBeats :: Pattern String -> ControlPattern
+  volcaBeats = n . (subtract 60 . volcaBeatsMidiNote <$>)
+
+  volcaBeatsMidiNote :: Num a => String -> a
+  volcaBeatsMidiNote "bd" = 36
+  volcaBeatsMidiNote "sn" = 38
+  volcaBeatsMidiNote "lt" = 43
+  volcaBeatsMidiNote "ht" = 50
+  volcaBeatsMidiNote "ch" = 42
+  volcaBeatsMidiNote "oh" = 46
+  volcaBeatsMidiNote "cp" = 39
+  volcaBeatsMidiNote "cl" = 75
+  volcaBeatsMidiNote "ag" = 67
+  volcaBeatsMidiNote "cr" = 49
+  volcaBeatsMidiNote _ = 0
 
   -- notes
   test0 = 35

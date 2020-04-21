@@ -28,6 +28,13 @@ cabal configure
 cabal build
 ```
 
+## Deploying
+
+```bash
+cabal sdist
+cabal upload path/to/maquinitas-tidal-x.x.x.tar.gz --publish
+```
+
 ## Installing
 
 ```bash
