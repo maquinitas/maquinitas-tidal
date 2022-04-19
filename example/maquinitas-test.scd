@@ -8,13 +8,13 @@ MIDIClient.init;
 
 // connect your MIDI device
 // replace xx and yy with corresponding MIDI ports
-var nameMIDIDestLeft = "xx";
-var nameMIDIDestRight = "yy";
+var nameMIDIDestLeft = "FastLane USB";
+var nameMIDIDestRight = "Port A";
 // store result in variable called zz
-~zz = MIDIOut.newByName(nameMIDIDestLeft, nameMIDIDestRight);
+~midiOut = MIDIOut.newByName(nameMIDIDestLeft, nameMIDIDestRight);
 
 // route zz to a name in tidal
-~dirt.soundLibrary.addMIDI(\tidalName, ~zz);
+~dirt.soundLibrary.addMIDI(\midi, ~midiOut);
 
 // optional, define latency of zz
 // ~zz.latency = 0.45;

@@ -1,8 +1,11 @@
--- import maquinitas
-:set -package maquinitas-tidal
-
 -- import maquinitas modules
 import qualified Korg
 
 -- test installation
-d1 $ Korg.volcaBeats "bd sn" # sound "midi" # midichan "9"
+d1 $ Korg.volcaBeats "bd [sd*3] bd" # sound "midi" # midichan "9"
+
+d1 $ sound "bd sn sn sn"
+
+mute 1
+
+unmute 1

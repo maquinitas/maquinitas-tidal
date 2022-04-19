@@ -1,5 +1,5 @@
 name:                maquinitas-tidal
-version:             0.2.4
+version:             0.2.5
 synopsis:            library for MIDI control of hardware
 description:         maquinitas is a library for MIDI control of hardware
 homepage:            https://github.com/maquinitas/maquinitas-tidal
