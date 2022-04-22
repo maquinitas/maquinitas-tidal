@@ -20,7 +20,6 @@ module Korg where
   volcaBeatsMidiNote "cl" = 75
   volcaBeatsMidiNote "ag" = 67
   volcaBeatsMidiNote "cr" = 49
-  volcaBeatsMidiNote "ht" = 50
 
   -- Korg MR-16 drum machine
   mr16 :: Pattern String -> ControlPattern
