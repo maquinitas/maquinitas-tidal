@@ -17,8 +17,7 @@ library
   exposed-modules:    Korg
                       MFBTanzbar
                       OtoBam
-                      RolandTR08
-                      RolandSH01A
+                      Roland
 
   -- other-modules:
   -- other-extensions:
