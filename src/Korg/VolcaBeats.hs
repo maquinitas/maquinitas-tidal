@@ -1,13 +1,14 @@
 -- maquinitas-tidal
 -- parameters for instruments by Korg
 
-module Korg where
+module Korg.VolcaBeats where
 
+  import Korg.KorgBase
   import Sound.Tidal.Params
-  import Sound.Tidal.Pattern
+  import Sound.Tidal.Pattern 
 
-  volcaBeats :: Pattern String -> ControlPattern
-  volcaBeats = n . (subtract 60 . volcaBeatsMidiNote <$>)
+  midiNote :: Pattern String -> ControlPattern
+  midiNote = n . (subtract 60 . volcaBeatsMidiNote <$>)
 
   volcaBeatsMidiNote :: Num a => String -> a
   volcaBeatsMidiNote "bd" = 36
@@ -34,7 +35,7 @@ module Korg where
   -- clap
   mr16MidiNote "cp" = 39
   -- low tom
-  mr16MidiNote "lt" = 41
+  mr16MidiNote "lt" = 41  
   -- closed hihat
   mr16MidiNote "ch" = 42
   -- open hihat
@@ -67,3 +68,33 @@ module Korg where
   mr16MidiNote "mp" = 64
   -- metronome forte
   mr16MidiNote "mf" = 65
+
+
+  -- ccv xx # ccn yy
+  -- ccn: cc param number
+  -- ccv: cc value (0 to 127)
+
+  ccn_num_1 m =
+    ([ 1 | m == "aa" ] ++
+    [ 2 | m == "bb" ] ++
+    [ 3 | m == "cc" ] ++
+    [ 4 | m == "dd" ] ++
+    [ 5 ])!!0
+
+  ccn_num_2 m
+    | m == "aa" = 1
+    | m == "bb" = 2
+    | m == "cc" = 3
+    | m == "dd" = 4
+    | otherwise = 5
+  
+  -- ccn_num :: Pattern String -> ControlPattern
+  ccn_num m =
+    case m of
+      "aa" -> 1
+      "bb" -> 2
+      "cc" -> 3
+      "dd" -> 4
+      _ -> 5
+    
+  ccparam m v = "ccv " ++ (show v) ++ " # ccn " ++ (show (ccn_num m))
