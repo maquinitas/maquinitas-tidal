@@ -22,6 +22,12 @@ All releases of maquinitas-tidal are available at [Hackage](https://hackage.hask
 * Add conventions for drum voice names
 * Add conventions for parameter names
 
+## Install local package
+
+```bash
+cabal install --allow-newer --lib .
+```
+
 ## Developing
 
 ```bash
