@@ -4,97 +4,86 @@
 module Korg.VolcaBeats where
 
   import Korg.KorgBase
-  import Sound.Tidal.Params
-  import Sound.Tidal.Pattern 
+  import qualified Sound.Tidal.Params
+  import Sound.Tidal.Pattern
+
+  -- MIDI notes
 
   midiNote :: Pattern String -> ControlPattern
-  midiNote = n . (subtract 60 . volcaBeatsMidiNote <$>)
+  midiNote = Sound.Tidal.Params.n . (subtract 60 . volcaBeatsMidiNote <$>)
 
   volcaBeatsMidiNote :: Num a => String -> a
-  volcaBeatsMidiNote "bd" = 36
-  volcaBeatsMidiNote "sd" = 38
-  volcaBeatsMidiNote "lt" = 43
-  volcaBeatsMidiNote "ht" = 50
-  volcaBeatsMidiNote "ch" = 42
-  volcaBeatsMidiNote "oh" = 46
-  volcaBeatsMidiNote "cp" = 39
-  volcaBeatsMidiNote "cl" = 75
-  volcaBeatsMidiNote "ag" = 67
-  volcaBeatsMidiNote "cr" = 49
+  volcaBeatsMidiNote m =
+    case m of
+      "bd" -> 36
+      "sd" -> 38
+      "lt" -> 43
+      "ht" -> 50
+      "ch" -> 42
+      "oh" -> 46
+      "cp" -> 39
+      "cl" -> 75
+      "ag" -> 67
+      "cr" -> 49
+      _    -> 0
 
   -- Korg MR-16 drum machine
+
   mr16 :: Pattern String -> ControlPattern
-  mr16 = n . (subtract 60 . mr16MidiNote <$>)
-  mr16MidiNote :: Num a => String -> a
-  -- bass drum
-  mr16MidiNote "bd" = 35
-  -- rimshot
-  mr16MidiNote "rs" = 37
-  -- snare drum
-  mr16MidiNote "sd" = 38
-  -- clap
-  mr16MidiNote "cp" = 39
-  -- low tom
-  mr16MidiNote "lt" = 41  
-  -- closed hihat
-  mr16MidiNote "ch" = 42
-  -- open hihat
-  mr16MidiNote "oh" = 46
-  -- high tom
-  mr16MidiNote "ht" = 47
-  -- crash
-  mr16MidiNote "cr" = 49
-  -- ride
-  mr16MidiNote "rd" = 51
-  -- low conga
-  mr16MidiNote "lc" = 52
-  -- high conga
-  mr16MidiNote "hc" = 53
-  -- tambourine
-  mr16MidiNote "ta" = 54
-  -- cow bell
-  mr16MidiNote "cb" = 56
-  -- timbale
-  mr16MidiNote "ti" = 57
-  -- cabasa
-  mr16MidiNote "ca" = 58
-  -- wood block
-  mr16MidiNote "wb" = 60
-  -- low agogo
-  mr16MidiNote "la" = 61
-  -- high agogo
-  mr16MidiNote "ha" = 63
-  -- metronome piano
-  mr16MidiNote "mp" = 64
-  -- metronome forte
-  mr16MidiNote "mf" = 65
-
-
-  -- ccv xx # ccn yy
-  -- ccn: cc param number
-  -- ccv: cc value (0 to 127)
-
-  ccn_num_1 m =
-    ([ 1 | m == "aa" ] ++
-    [ 2 | m == "bb" ] ++
-    [ 3 | m == "cc" ] ++
-    [ 4 | m == "dd" ] ++
-    [ 5 ])!!0
-
-  ccn_num_2 m
-    | m == "aa" = 1
-    | m == "bb" = 2
-    | m == "cc" = 3
-    | m == "dd" = 4
-    | otherwise = 5
+  mr16 = Sound.Tidal.Params.n . (subtract 60 . mr16MidiNote <$>)
   
-  -- ccn_num :: Pattern String -> ControlPattern
-  ccn_num m =
+  mr16MidiNote :: Num a => String -> a
+  mr16MidiNote m =
     case m of
-      "aa" -> 1
-      "bb" -> 2
-      "cc" -> 3
-      "dd" -> 4
-      _ -> 5
-    
-  ccparam m v = "ccv " ++ (show v) ++ " # ccn " ++ (show (ccn_num m))
+      "bd" -> 35 -- bass drum
+      "rs" -> 37 -- rimshot
+      "sd" -> 38 -- snare drum
+      "cp" -> 39 -- clap
+      "lt" -> 41 -- low tom
+      "ch" -> 42 -- closed hihat
+      "oh" -> 46 -- open hihat
+      "ht" -> 47 -- high tom
+      "cr" -> 49 -- crash
+      "rd" -> 51 -- ride
+      "lc" -> 52 -- low conga
+      "hc" -> 53 -- high conga
+      "ta" -> 54 -- tambourine
+      "cb" -> 56 -- cow bell
+      "ti" -> 57 -- timbale
+      "ca" -> 58 -- cabasa
+      "wb" -> 60 -- wood block
+      "la" -> 61 -- low agogo
+      "ha" -> 63 -- high agogo
+      "mp" -> 64 -- metronome piano
+      "mf" -> 65 -- metronome forte
+      _    -> 0  -- no match
+
+  -- ControlChange list
+
+  ccn :: Pattern String -> ControlPattern
+  ccn = Sound.Tidal.Params.ccn . ( ccnList<$> )
+  
+  ccnList :: Num a => String -> a
+  ccnList m =
+    case m of
+      "kickLevel"   -> 40
+      "snareLevel"  -> 41
+      "loTomLevel"  -> 42
+      "hiTomLevel"  -> 43
+      "clHatLevel"  -> 44
+      "opHatLevel"  -> 45
+      "clapLevel"   -> 46
+      "clavesLevel" -> 47
+      "agogoLevel"  -> 48
+      "crashLevel"  -> 49
+      "clapSpeed"   -> 50
+      "clavesSpeed" -> 51
+      "agogoSpeed"  -> 52
+      "crashSpeed"  -> 53
+      "stutterTime" -> 54
+      "stutterDepth"-> 55
+      "tomDecay"    -> 56
+      "closedHatDecay"  -> 57
+      "openHatDecay"    -> 58
+      "hatGrain"        -> 59
+      _ -> 0
