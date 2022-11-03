@@ -61,7 +61,7 @@ module Korg.VolcaBeats where
   -- ControlChange list
 
   ccn :: Pattern String -> ControlPattern
-  ccn = Sound.Tidal.Params.ccn . ( ccnList<$> )
+  ccn = Sound.Tidal.Params.n . ( ccnList <$>)
   
   ccnList :: Num a => String -> a
   ccnList m =

@@ -4,7 +4,9 @@ import qualified Korg.VolcaBeats
 -- test installation
 d1 $ Korg.VolcaBeats.midiNote "bd [sd*3] bd" # sound "midi" # midichan "9"
 
-d2 $ Korg.VolcaBeats.ccn "kickLevel" # ccv "50" # sound "midi" # midichan "9"
+d2 $ Korg.VolcaBeats.ccn "kickLevel" # ccv "0" # sound "midi" # midichan "9"
+d2 $ Korg.VolcaBeats.ccn "kickLevel" # ccv "0" # sound "midi" # midichan "9"
+
 
 mute 1
 
