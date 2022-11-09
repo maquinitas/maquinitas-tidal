@@ -3,7 +3,6 @@
 
 module Korg.VolcaBeats where
 
-  import Korg.KorgBase
   import qualified Sound.Tidal.Params
   import Sound.Tidal.Pattern
 
@@ -15,16 +14,16 @@ module Korg.VolcaBeats where
   volcaBeatsMidiNote :: Num a => String -> a
   volcaBeatsMidiNote m =
     case m of
-      "bd" -> 36
-      "sd" -> 38
-      "lt" -> 43
-      "ht" -> 50
-      "ch" -> 42
-      "oh" -> 46
-      "cp" -> 39
-      "cl" -> 75
-      "ag" -> 67
-      "cr" -> 49
+      "bd" -> 36 -- kick
+      "sd" -> 38 -- snare
+      "lt" -> 43 -- loTom
+      "ht" -> 50 -- hiTom
+      "ch" -> 42 -- clHat
+      "oh" -> 46 -- opHat
+      "cp" -> 39 -- clap
+      "cl" -> 75 -- claves
+      "ag" -> 67 -- agogo
+      "cr" -> 49 -- crash
       _    -> 0
 
   -- Korg MR-16 drum machine
@@ -61,29 +60,29 @@ module Korg.VolcaBeats where
   -- ControlChange list
 
   ccn :: Pattern String -> ControlPattern
-  ccn = Sound.Tidal.Params.ccn . ( ccnList <$>)
+  ccn = Sound.Tidal.Params.ccn . (ccnList <$>)
   
   ccnList :: Num a => String -> a
   ccnList m =
     case m of
-      "kickLevel"   -> 40
-      "snareLevel"  -> 41
-      "loTomLevel"  -> 42
-      "hiTomLevel"  -> 43
-      "clHatLevel"  -> 44
-      "opHatLevel"  -> 45
-      "clapLevel"   -> 46
-      "clavesLevel" -> 47
-      "agogoLevel"  -> 48
-      "crashLevel"  -> 49
-      "clapSpeed"   -> 50
-      "clavesSpeed" -> 51
-      "agogoSpeed"  -> 52
-      "crashSpeed"  -> 53
-      "stutterTime" -> 54
-      "stutterDepth"-> 55
-      "tomDecay"    -> 56
+      "kickLevel"       -> 40
+      "snareLevel"      -> 41
+      "loTomLevel"      -> 42
+      "hiTomLevel"      -> 43
+      "clHatLevel"      -> 44
+      "opHatLevel"      -> 45
+      "clapLevel"       -> 46
+      "clavesLevel"     -> 47
+      "agogoLevel"      -> 48
+      "crashLevel"      -> 49
+      "clapSpeed"       -> 50
+      "clavesSpeed"     -> 51
+      "agogoSpeed"      -> 52
+      "crashSpeed"      -> 53
+      "stutterTime"     -> 54
+      "stutterDepth"    -> 55
+      "tomDecay"        -> 56
       "closedHatDecay"  -> 57
       "openHatDecay"    -> 58
       "hatGrain"        -> 59
-      _ -> 0
+      _                 -> 0
