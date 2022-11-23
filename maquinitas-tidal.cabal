@@ -1,5 +1,5 @@
 name:                maquinitas-tidal
-version:             0.2.12
+version:             0.2.13
 synopsis:            library for MIDI control of hardware
 description:         maquinitas is a library for MIDI control of hardware
 homepage:            https://github.com/maquinitas/maquinitas-tidal
@@ -18,9 +18,10 @@ library
                       Korg.VolcaBeats
                       Korg.VolcaBass
                       Korg.VolcaKeys
+                      Boss.DR880
+                      Roland.TB3
                       MFBTanzbar
                       OtoBam
-                      Roland
 
   -- other-modules:
   -- other-extensions:
