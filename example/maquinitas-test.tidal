@@ -1,11 +1,17 @@
 -- import maquinitas modules
-import qualified Korg.VolcaBass
+import qualified Korg.VolcaBass as VolcaBass
 
-import qualified Korg.VolcaBeats
+import qualified Korg.VolcaBeats as VolcaBeats
 
-import qualified Boss.DR880
+import qualified Boss.DR880 as DR880
 
-import qualified Roland.TB3
+import qualified Roland.TB3 as TB3
+
+import qualified ChaseBliss.WarpedVinylHiFi as WVHiFi
+
+import qualified ChaseBliss.TonalRecall as TonalRecall
+
+import qualified ChaseBliss.Blooper as Blooper
 
 -- test installation
 d1 $ sound "bd"
@@ -14,27 +20,45 @@ d1 $ silence
 
 d1 $ note "0 1 2 3" # sound "midi" # midichan "1"
 
-d1 $ Boss.DR880.drum1 "kick1 [kick2*3] snare1" # sound "midi" # midichan "9"
+d2 $ Blooper.ccn "toogleModA" # ccv "0" # sound "midi" # midichan "1"
 
-d1 $ Boss.DR880.drum2 "kick1 [kick2*3] snare1" # sound "midi" # midichan "9"
+d2 $ Blooper.ccn "toogleModA" # ccv "1" # sound "midi" # midichan "1"
 
-d1 $ Boss.DR880.drum3 "kick1 [kick2*3] snare1" # sound "midi" # midichan "9"
+d2 $ Blooper.ccn "record" # ccv "1" # sound "midi" # midichan "1"
 
-d1 $ Boss.DR880.drum1 "kick1" # sound "midi" # midichan "9"
+d2 $ Blooper.ccn "play" # ccv "1" # sound "midi" # midichan "1"
 
-d2 $ Roland.TB3.ccn "cutoff" # ccv "0" # sound "midi" # midichan "1"
+d2 $ Blooper.ccn "stop" # ccv "1" # sound "midi" # midichan "1"
 
-d2 $ Roland.TB3.ccn "cutoff" # ccv "127" # sound "midi" # midichan "1"
+d2 $ TonalRecall.ccn "depth" # ccv "0" # sound "midi" # midichan "1"
 
-d2 $ Korg.VolcaBass.ccn "lfoRate" # ccv "0" # sound "midi" # midichan "1"
+d2 $ TonalRecall.ccn "depth" # ccv "127" # sound "midi" # midichan "1"
 
-d2 $ Korg.VolcaBass.ccn "lfoRate" # ccv "127" # sound "midi" # midichan "1"
+d2 $ WVHiFi.ccn "rpm" # ccv "0" # sound "midi" # midichan "1"
 
-d1 $ Korg.VolcaBeats.midiNote "bd [sd*3] bd" # sound "midi" # midichan "9"
+d2 $ WVHiFi.ccn "rpm" # ccv "127" # sound "midi" # midichan "1"
 
-d2 $ Korg.VolcaBeats.ccn "kickLevel" # ccv "50" # sound "midi" # midichan "9"
+d1 $ DR880.drum1 "kick1 [kick2*3] snare1" # sound "midi" # midichan "9"
 
-d2 $ Korg.VolcaBeats.ccn "kickLevel" # ccv "0" # sound "midi" # midichan "9"
+d1 $ DR880.drum2 "kick1 [kick2*3] snare1" # sound "midi" # midichan "9"
+
+d1 $ DR880.drum3 "kick1 [kick2*3] snare1" # sound "midi" # midichan "9"
+
+d1 $ DR880.drum1 "kick1" # sound "midi" # midichan "9"
+
+d2 $ TB3.ccn "cutoff" # ccv "0" # sound "midi" # midichan "1"
+
+d2 $ TB3.ccn "cutoff" # ccv "127" # sound "midi" # midichan "1"
+
+d2 $ VolcaBass.ccn "lfoRate" # ccv "0" # sound "midi" # midichan "1"
+
+d2 $ VolcaBass.ccn "lfoRate" # ccv "127" # sound "midi" # midichan "1"
+
+d1 $ VolcaBeats.midiNote "bd [sd*3] bd" # sound "midi" # midichan "9"
+
+d2 $ VolcaBeats.ccn "kickLevel" # ccv "50" # sound "midi" # midichan "9"
+
+d2 $ VolcaBeats.ccn "kickLevel" # ccv "0" # sound "midi" # midichan "9"
 
 mute 1
 
