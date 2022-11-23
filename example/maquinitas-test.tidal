@@ -1,8 +1,34 @@
 -- import maquinitas modules
+import qualified Korg.VolcaBass
+
 import qualified Korg.VolcaBeats
 
+import qualified Boss.DR880
+
+import qualified Roland.TB3
+
 -- test installation
-d1 $ sound "bd sn"
+d1 $ sound "bd"
+
+d1 $ silence
+
+d1 $ note "0 1 2 3" # sound "midi" # midichan "1"
+
+d1 $ Boss.DR880.drum1 "kick1 [kick2*3] snare1" # sound "midi" # midichan "9"
+
+d1 $ Boss.DR880.drum2 "kick1 [kick2*3] snare1" # sound "midi" # midichan "9"
+
+d1 $ Boss.DR880.drum3 "kick1 [kick2*3] snare1" # sound "midi" # midichan "9"
+
+d1 $ Boss.DR880.drum1 "kick1" # sound "midi" # midichan "9"
+
+d2 $ Roland.TB3.ccn "cutoff" # ccv "0" # sound "midi" # midichan "1"
+
+d2 $ Roland.TB3.ccn "cutoff" # ccv "127" # sound "midi" # midichan "1"
+
+d2 $ Korg.VolcaBass.ccn "lfoRate" # ccv "0" # sound "midi" # midichan "1"
+
+d2 $ Korg.VolcaBass.ccn "lfoRate" # ccv "127" # sound "midi" # midichan "1"
 
 d1 $ Korg.VolcaBeats.midiNote "bd [sd*3] bd" # sound "midi" # midichan "9"
 
